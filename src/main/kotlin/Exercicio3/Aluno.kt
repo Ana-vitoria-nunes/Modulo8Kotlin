@@ -6,7 +6,7 @@ class Aluno {
         notas.add(nota)
     }
 
-    fun calcularMediaSemestral(): Double {
+    fun calcularMedia(): Double {
         if (notas.size != 4) {
             throw IllegalArgumentException("É necessário informar as 4 notas para calcular a média semestral.")
         }
@@ -15,5 +15,17 @@ class Aluno {
     }
     fun limparNotas() {
         notas.clear()
+    }
+    fun lançarNotas(){
+        for (i in 1..4) {
+            var nota: Double
+            do {
+                println("Informe a nota $i:")
+                nota = readln().toDoubleOrNull()!!
+            } while (nota !in 0.0..10.0)
+            adicionarNota(nota)
+        }
+        val mediaSemestral =calcularMedia()
+        println("Média = $mediaSemestral")
     }
 }
