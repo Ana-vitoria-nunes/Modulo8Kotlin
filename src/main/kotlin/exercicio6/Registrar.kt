@@ -44,23 +44,16 @@ class Registrar {
             if (conta != null) {
                 println("Digite o valor do depósito:")
                 val valor = readlnOrNull()?.toDoubleOrNull() ?: 0.0
-                println("O depósito será feito pelo empregador? (S/N)")
+                println("O depósito será feito pelo empregador? (S-(sim)/N-(não))")
                 val resposta = readln()
-                var res=""
-                if (resposta.equals("s", ignoreCase = true)) {
-                    res=resposta
 
-                } else if (resposta.equals("n", ignoreCase = true)) {
-                   res=resposta
+                if (resposta=="S") {
+                    conta.deposito(valor, Empregador = true)
+                } else if (resposta=="N") {
+                    conta.deposito(valor, Empregador = false)
                 }
                 else{
-                    println("Inválido digite  (S(sim) ou N(não).")
-                    return
-                }
-                if (res == "S") {
-                    conta.deposito(valor, Empregador = true)
-                } else {
-                    conta.deposito(valor, Empregador = false)
+                    println("Opção inválida.")
                 }
             } else {
                 println("Conta inválida ou senha incorreta.")
