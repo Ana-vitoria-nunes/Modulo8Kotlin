@@ -1,7 +1,5 @@
 package Exercicio1
-
 import kotlin.arrayOf
-
 fun main() {
     val produtos = arrayOf(
         Livros("Livro 1", 29.99,null,"Autor 1"),
@@ -29,17 +27,17 @@ fun main() {
         p.mostrarDetalhe()
         println()
     }
-
-    val produtoBusca =CDs("CD1", 19.99,"11", 12)
-    val produtoBuscaD =CDs("lsl", 19.99,"58", 12)
-    buscarProduto(produtoBusca,produtosNovos)
-    buscarProduto(produtoBuscaD,produtosNovos)
     val possuiCodigosRepetidos = verificarCodigosRepetidos(produtosNovos)
     if (possuiCodigosRepetidos) {
         println("Existem códigos de barras repetidos no vetor.")
     } else {
         println("Não existem códigos de barras repetidos no vetor.")
     }
+
+    val produtoBusca =CDs("CD1", 19.99,"11", 12)
+    val produtoBuscaD =CDs("lsl", 19.99,"58", 12)
+    buscarProduto(produtoBusca,produtosNovos)
+    buscarProduto(produtoBuscaD,produtosNovos)
 
 
 }
