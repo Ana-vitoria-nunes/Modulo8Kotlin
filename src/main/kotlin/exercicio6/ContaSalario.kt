@@ -1,10 +1,11 @@
 package exercicio6
 
-class ContaSalario  (numero: String, senha: String) : Conta(numero, senha, 1045.0){
+class ContaSalario  (numero: String, senha: String) : Conta(numero, senha, 1212.0){
 
-        override fun deposito(valor: Double, isEmpregador: Boolean) {
-            if (isEmpregador) {
+        override fun deposito(valor: Double, empregador: Boolean) {
+            if (empregador) {
                 println("Depósito de R$ $valor realizado na Conta Salário.")
+                saldo+=valor
             } else {
                 println("Conta Salário só pode receber depósito do empregador.")
             }

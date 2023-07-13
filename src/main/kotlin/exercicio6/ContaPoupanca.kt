@@ -2,8 +2,8 @@ package exercicio6
 
 class ContaPoupanca(numero: String, senha: String) : Conta(numero, senha, 0.0) {
 
-    override fun deposito(valor: Double, isEmpregador: Boolean) {
-        if (isEmpregador) {
+    override fun deposito(valor: Double, Empregador: Boolean) {
+        if (Empregador) {
             println("Depósito de R$ $valor realizado na Conta Poupança $numero.")
             saldo += valor
         } else {
