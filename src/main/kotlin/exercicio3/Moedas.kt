@@ -1,12 +1,7 @@
 package exercicio3
 import java.math.BigDecimal
 class Moedas {
-    fun moedaValida(moeda:Int){
-        when(moeda){
-            1,2,3,4->Unit
-            else-> throw IllegalArgumentException("Tipo de moeda inválido")
-        }
-    }
+
     fun validarValor(valorString: String):BigDecimal{
         val valor=BigDecimal(valorString)
         if(valorString.isEmpty()){
