@@ -1,9 +1,9 @@
 package exercicio6
 class GuardaVolumes {
-    val dicionario = mutableMapOf<Int, MutableList<PecaFilha>>()
+    val dicionario = mutableMapOf<Int, ArrayList<PecaFilha>>()
     var contador = 1
 
-    fun guardarPecas(listaDePecas: MutableList<PecaFilha>): Int {
+    fun guardarPecas(listaDePecas: ArrayList<PecaFilha>): Int {
         dicionario[contador] = listaDePecas
         return contador++
     }
@@ -11,12 +11,11 @@ class GuardaVolumes {
         for ((numero, pecas) in dicionario) {
             println("Número de identificação: $numero")
             for (peca in pecas) {
-                println("Marca: ${peca.marca}, Modelo: ${peca.modelo}")
+                println("Marca: ${peca.marca} | Modelo: ${peca.modelo}")
             }
             println("-----------------------------")
         }
     }
-
     fun mostrarPecasComNumero(numero: Int) {
         val pecas = dicionario[numero]
         if (pecas != null) {
@@ -31,9 +30,11 @@ class GuardaVolumes {
     }
 
     fun removerPecas(numero: Int) {
-        if (dicionario.containsKey(numero)) {
-            dicionario.remove(numero)
-            println("Peças removidas do número de identificação: $numero")
+        val pecas = dicionario.remove(numero)
+        if (pecas != null) {
+            for (peca in pecas) {
+              PecaFilha(peca.modelo,peca.marca).retirada()
+            }
         } else {
             println("Número de identificação não encontrado.")
         }

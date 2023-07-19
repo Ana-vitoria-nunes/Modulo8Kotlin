@@ -14,7 +14,7 @@ fun main() {
 
         when (opcao) {
             1 -> {
-                val listaDePecas = mutableListOf<PecaFilha>()
+                val listaDePecas = arrayListOf<PecaFilha>()
                 println("Informe os dados das peças:")
                 print("Marca: ")
                 val marca = readlnOrNull()
@@ -33,7 +33,6 @@ fun main() {
             2 -> {
                 println("Peças no Guarda-Volumes:")
                 guardaVolumes.mostrarPecas()
-                println("-----------------------------")
             }
             3 -> {
                 print("Informe o número de identificação: ")
